@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.hash {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.spacesToMarks {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.spacesToMark {
+    display: flex;
+}
+
+.btn {
+    width: 70px;
+    height: 70px;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.spacesToMark:nth-child(1),
+.spacesToMark:nth-child(2),
+.spacesToMark:nth-child(4),
+.spacesToMark:nth-child(5){
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.spacesToMark:nth-child(3),
+.spacesToMark:nth-child(6){
+    border-bottom: 1px solid black;
+}
+
+.spacesToMark:nth-child(7),
+.spacesToMark:nth-child(8){
+    border-right: 1px solid black;
+}
+
+
+
