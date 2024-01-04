@@ -33,6 +33,13 @@
     cursor: pointer;
 }
 
+.markerO,
+.markerX {
+    font-weight: 700;
+    font-size: 40px;
+    color: red;
+}
+
 .spacesToMark:nth-child(1),
 .spacesToMark:nth-child(2),
 .spacesToMark:nth-child(4),
