@@ -1,4 +1,6 @@
 let btns = document.querySelectorAll(".btn")
+let markerSelected = 
+
 
 btns.forEach((btn, ind)=> {
     

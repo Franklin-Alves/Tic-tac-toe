@@ -15,13 +15,13 @@
 }
 
 
-.spacesToMarks {
+.spaces-to-marks {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.spacesToMark {
+.spaces-to-mark {
     display: flex;
 }
 
@@ -33,28 +33,41 @@
     cursor: pointer;
 }
 
-.markerO,
-.markerX {
+.marker-o,
+.marker-x {
     font-weight: 700;
     font-size: 40px;
     color: red;
 }
 
-.spacesToMark:nth-child(1),
-.spacesToMark:nth-child(2),
-.spacesToMark:nth-child(4),
-.spacesToMark:nth-child(5){
+.marker-selected {
+    position: absolute;
+    left: 8%;
+    top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns-selections .btn.marker-o {
+    margin-left: -20px;
+}
+
+.spaces-to-mark:nth-child(1),
+.spaces-to-mark:nth-child(2),
+.spaces-to-mark:nth-child(4),
+.spaces-to-mark:nth-child(5){
     border-bottom: 1px solid black;
     border-right: 1px solid black;
 }
 
-.spacesToMark:nth-child(3),
-.spacesToMark:nth-child(6){
+.spaces-to-mark:nth-child(3),
+.spaces-to-mark:nth-child(6){
     border-bottom: 1px solid black;
 }
 
-.spacesToMark:nth-child(7),
-.spacesToMark:nth-child(8){
+.spaces-to-mark:nth-child(7),
+.spaces-to-mark:nth-child(8){
     border-right: 1px solid black;
 }
 
