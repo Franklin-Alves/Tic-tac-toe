@@ -2,38 +2,43 @@ let btns = document.querySelectorAll(".btn")
 let chooseBtn = document.querySelectorAll(".btns-selections .choose-btn")
 
 let firstClick = true
-const options = [""]
 
-chooseBtn.forEach((choice, ind) => {
+chooseBtn.forEach((choice) => {
     choice.addEventListener('click', () => {
         
         if(firstClick){
 
-            let resultChoice = choice.getAttribute("class").substring(11)
-            let contentChoice = choice.textContent
+            let makerAttribute1 = choice.getAttribute("class").substring(11)
+            let playerChoice = choice.textContent
 
-            console.log(relative)
+            let relativeChild = ""
+            choice.nextElementSibling != null ? relativeChild = choice.nextElementSibling : choice.previousElementSibling != null ? relativeChild = choice.previousElementSibling : console.log("erro")
 
-            markerChoose(resultChoice, contentChoice)
+            let markerAttribute2 = relativeChild.getAttribute("class").substring(11)
+            let opponentMarker = relativeChild.textContent
+
+
+            markerChoose(makerAttribute1, playerChoice, markerAttribute2, opponentMarker)
         }
 
         firstClick = false
     })
 })
 
-function markerChoose (res, cont) {
-    btns.forEach((btn, ind)=> {
+function markerChoose (mp1, pc, mp2, om) {
+    btns.forEach((btn)=> {
         
         btn.addEventListener('click', () => {
 
-            btn.classList.add(res)
-            btn.innerHTML = cont
-            opponentPlayer()
+            if(btn.textContent == "") {
+
+                btn.classList.add(mp1)
+                btn.innerHTML = pc
+            }
+
+            
+            
         })
         
     })
-}
-
-function opponentPlayer(){
-
 }
