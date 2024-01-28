@@ -25,20 +25,41 @@ chooseBtn.forEach((choice) => {
     })
 })
 
-function markerChoose (mp1, pc, mp2, om) {
-    btns.forEach((btn)=> {
+function markerChoose (m1, pc, m2, om) {
+    btns.forEach((btn, ind)=> {
         
         btn.addEventListener('click', () => {
 
             if(btn.textContent == "") {
 
-                btn.classList.add(mp1)
+                btn.classList.add(m1)
                 btn.innerHTML = pc
-            }
+    
+                const maxAttempts = 100;
+                let attempts = 0;
 
-            
-            
+                do {
+                    var randomNumber = generateRandomNumber()
+                    attempts++
+                } while (btns[randomNumber].classList.length != 1 && attempts < maxAttempts) {
+
+                    if(attempts < maxAttempts){
+
+                        btns[randomNumber].classList.add(m2)
+                        btns[randomNumber].innerHTML = om
+                    }
+
+                }
+
+            }
+           
         })
         
     })
+}
+
+function generateRandomNumber(){
+    let number = Math.floor((Math.random() * btns.length))
+    
+    return number
 }
