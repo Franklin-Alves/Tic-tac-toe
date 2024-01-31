@@ -1,7 +1,17 @@
-let btns = document.querySelectorAll(".btn")
-let chooseBtn = document.querySelectorAll(".btns-selections .choose-btn")
+const btns = document.querySelectorAll(".btn")
+const chooseBtn = document.querySelectorAll(".btns-selections .choose-btn")
 
 let firstClick = true
+const winningCombinations = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6],
+]
 
 chooseBtn.forEach((choice) => {
     choice.addEventListener('click', () => {
@@ -51,6 +61,8 @@ function markerChoose (m1, pc, m2, om) {
 
                 }
 
+                const teste = checkWinner(m1)
+                if(teste) console.log("winner")
             }
            
         })
@@ -62,4 +74,12 @@ function generateRandomNumber(){
     let number = Math.floor((Math.random() * btns.length))
     
     return number
+}
+
+function checkWinner(ca) {
+    return winningCombinations.some((combination) => {
+        return combination.every((index) => {
+            return btns[index].classList.contains(ca)
+        })
+    })
 }
