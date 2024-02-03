@@ -12,8 +12,26 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
+.show-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+.content-message {
+    font-size: 32px;
+    color: #fff;
+    z-index: 4;
+}
 
 .spaces-to-marks {
     list-style: none;
@@ -32,6 +50,7 @@
     background: 0;
     border: 0;
     cursor: pointer;
+    
 }
 
 .marker-o,

@@ -1,5 +1,6 @@
 const btns = document.querySelectorAll(".btn")
 const chooseBtn = document.querySelectorAll(".btns-selections .choose-btn")
+const message = document.querySelector(".message-combination")
 
 let firstClick = true
 const winningCombinations = [
@@ -61,8 +62,10 @@ function markerChoose (m1, pc, m2, om) {
 
                 }
 
-                const teste = checkWinner(m1)
-                if(teste) console.log("winner")
+                const checkMarkerChoose = checkCombination(m1)
+                const checkMarkerOpponent = checkCombination(m2)
+
+                whoWon(checkMarkerChoose, checkMarkerOpponent)
             }
            
         })
@@ -76,10 +79,32 @@ function generateRandomNumber(){
     return number
 }
 
-function checkWinner(ca) {
+function checkCombination(ca) {
     return winningCombinations.some((combination) => {
         return combination.every((index) => {
             return btns[index].classList.contains(ca)
         })
     })
+}
+
+
+function whoWon(cc, cp) {
+    const t = cc ? "Você Venceu!" : cp ? "Você Perdeu!" : ""
+    
+    if(t != ""){
+        message.classList.add("show-message")
+        message.firstElementChild.textContent = t
+    } else {empate()}
+}
+
+function empate(){
+    let countText = 0
+    btns.forEach(b => {
+        if(b.textContent) countText++
+    })
+    
+    if(countText == 9){
+        message.classList.add("show-message")
+        message.firstElementChild.textContent = "Empate!"
+    }
 }
