@@ -69,9 +69,9 @@
     align-items: center;
 }
 
-.btns-selections .btn.marker-o {
+/* .btns-selections .btn.marker-o {
     margin-left: -20px;
-}
+} */
 
 .spaces-to-mark:nth-child(1),
 .spaces-to-mark:nth-child(2),

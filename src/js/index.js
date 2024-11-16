@@ -89,12 +89,14 @@ function checkCombination(ca) {
 
 
 function whoWon(cc, cp) {
-    const t = cc ? "Você Venceu!" : cp ? "Você Perdeu!" : ""
-    
+    const t = cc ? "Você Venceu, Parabéns!" : cp ? "Você Perdeu, Infelizmente!" : ""
+
     if(t != ""){
         message.classList.add("show-message")
         message.firstElementChild.textContent = t
+        setInterval(() => location.reload(), 1000)
     } else {empate()}
+
 }
 
 function empate(){
@@ -105,6 +107,7 @@ function empate(){
     
     if(countText == 9){
         message.classList.add("show-message")
-        message.firstElementChild.textContent = "Empate!"
+        message.firstElementChild.textContent = "Empatou!"
+        setInterval(() => location.reload(), 1000)
     }
 }
